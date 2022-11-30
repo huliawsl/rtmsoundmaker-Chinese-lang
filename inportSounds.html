@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>RTM Sound Maker</title>
+    <link rel="stylesheet" href="style.css">
+    <script type="text/javascript">
+        const ipcRenderer = window.ipcRenderer;
+        let soundList = [];
+        let soundData = [];
+        let filePathList = [];
+
+        window.onload = () => {
+            init();
+        }
+
+        ipcRenderer.on("openFile", (e, layers) => {
+            document.getElementById("soundList").innerHTML = "";
+            soundList = [];
+            soundData = [];
+            document.getElementById("soundList").innerHTML = "";
+            layers.forEach((layerData, index) => {
+                filePathList[index] = { name: "none", path: "none" };
+                soundList.push(layerData.soundName);
+                document.getElementById("soundList").insertAdjacentHTML('beforeend', `<div id="sound_${index}">・${layerData.soundName}</div>`);
+            });
+            soundData.fill(undefined, 0, layers.length - 1);
+        });
+
+        function init() {
+            document.getElementById("inportPanel").addEventListener("dragover", (e) => {
+                e.preventDefault();
+            });
+
+            document.getElementById("inportPanel").addEventListener("drop", (e) => {
+                e.preventDefault();
+                loadSounds(Array.from(e.dataTransfer.files));
+            });
+        }
+
+        function closeWindow() {
+            ipcRenderer.send("menue", "hide");
+        }
+
+        function sendData() {
+            ipcRenderer.send("inportSounds", filePathList);
+            ipcRenderer.send("menue", "hide");
+        }
+
+        function loadSounds(files) {
+            let funcAry = [];
+            files.forEach((file, index) => {
+                funcAry.push(readSoundFile);
+                let soundIndex = soundList.indexOf(file.name.substr(0, file.name.lastIndexOf(".")));
+                if (soundIndex >= 0) filePathList[soundIndex] = { name: file.name, path: file.path };
+            });
+            funcAry.reduce((p, c) => {
+                return p.then(c);
+            }, Promise.resolve([0, files]));
+        }
+
+        function readSoundFile(data) {
+            return new Promise((resolve, reject) => {
+                let index = data[0];
+                let file = data[1][index];
+                let soundIndex = soundList.indexOf(file.name.substr(0, file.name.lastIndexOf(".")));
+                if (soundIndex < 0) resolve([index + 1, data[1]]);
+                else {
+                    let reader = new FileReader();
+                    reader.readAsArrayBuffer(file);
+                    reader.onload = () => {
+                        let result = reader.result;
+                        let audioContext = new AudioContext();
+                        audioContext.decodeAudioData(result, (buffer) => {
+                            let source = audioContext.createBufferSource();
+                            let gain = audioContext.createGain();
+                            source.buffer = buffer;
+                            source.loop = true;
+                            source.connect(gain);
+                            gain.connect(audioContext.destination);
+                            soundData[soundIndex] = [audioContext, source, gain, false];
+                            document.getElementById(`sound_${soundIndex}`).innerHTML = `OK:${file.name}`;
+                            resolve([index + 1, data[1]]);
+                        });
+                    };
+                }
+            });
+        }
+    </script>
+</head>
+
+<body>
+    <!-- メニューバー -->
+    <div id="titleBar">
+        <div class="menueButton" id="Close" onclick="closeWindow()" style="float:right">×</div>
+        声音导入
+    </div>
+
+    <div id="panels">
+        <!-- 説明 -->
+        <div id="inportPanel" style="float: left; width: 100%; height: 100%;">
+            将音频文件拖放到此处导入
+            <div id="soundList">
+            </div>
+            <input type="button" onclick="sendData()" value="导入" style="float:right">
+            <br/>
+            只能导入同名文件<br/>
+            其他文件请在导入后<br/>
+            从编辑面板选择该文件
+        </div>
+    </div>
+</body>
+
+</html>
