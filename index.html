@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>RTM Sound Maker</title>
+    <link rel="stylesheet" href="style.css">
+    <script type="text/javascript" src="index.js"></script>
+</head>
+
+<body><!-- メニューバー --><div id="titleBar">
+        <div class="menueButton" id="New" onclick="clickBtn()">新建</div>
+        <div class="menueButton" id="Open" onclick="clickBtn()">打开</div>
+        <div class="menueButton" id="Save" onclick="clickBtn()">导出</div>
+        <div class="menueButton" id="Close" onclick="clickBtn()" style="float:right">×</div>
+        <div class="menueButton" id="Maximize" onclick="clickBtn()" style="float:right">❐</div>
+        <div class="menueButton" id="Minimize" onclick="clickBtn()" style="float:right">－</div>RTM Sound Maker</div><!-- 本体 --><div id="panels"><!-- 左パネル --><div id="panel-l" class="sidePanel"><!-- 表示モード --><div style="display:flex; justify-content:space-around; padding: 3px;">
+                <div class="menueButton nButton" id="canvasMode" style="float: left;" onclick="changeCanvasMode()">模式:自动选择</div>
+            </div><!-- 再生停止 --><div style="display:flex; justify-content:space-around; padding: 3px;">
+                <div class="menueButton nButton" id="Play" onclick="setPlaying(true)">播放</div>
+                <div class="menueButton nButton selected" id="Stop" onclick="setPlaying(false)">停止</div>
+                <div class="menueButton nButton selected" id="SyncBtn" onclick="setSyncButton()">同步</div>
+            </div><!-- ノッチ --><div style="display:flex; justify-content:space-around; padding: 3px;">
+                <div class="menueButton nButton selected" id="Brakr" onclick="setNotch(0)">制动</div>
+                <div class="menueButton nButton" id="Off" onclick="setNotch(1)">滑行</div>
+                <div class="menueButton nButton" id="Power" onclick="setNotch(2)">牵引</div>
+            </div><br/> <!-- 加速度 --><div>加速<input type="text" id="acceleration" style="width:30px;" value="3.0" onchange="changeLPanelData()">km/h/s</div><!-- 最高速度 --><div>最高速:<input type="text" id="maxSpeed" style="width:30px;" value="130" onchange="changeLPanelData()">km/h</div><!-- ピッチリミット --><div>RTM规格:<input type="checkbox" id="pitchLimit" onchange="setPitchLimit(this)" checked>
+            </div><!-- 出力設定 --> <br/><div>
+                <div style="display: flex; justify-content:space-around;">--- 输出设置 ---</div>・域名<br/><input type="text" id="libName" value="sound_default" style="width: 150px;" onchange="setDmain(this)"><br/> ・文件名<br/><input type="text" id="subName" value="223" style="width: 150px;" onchange="setSubName(this)"><br/> ・Sounds.json<br/> ※統合する場合は指定<br/><input type="file" id="addSoundsJson" style="width: 150px;" accept=".json">
+            </div>
+            
+        </div><!-- 中央パネル --><div id="panel-c"><!-- 情報 --><div style="display:flex; justify-content:space-around;">
+                <div class="data" id="speedData" style="float: left;">速度: 0.00 km/h</div>
+                <div class="data" id="accData" style="float: right;">加速度: 0.00 km/h/s</div>
+            </div><!-- キャンバス --><canvas id="canvas" ondrag="setSpeedCanvasDrag()"></canvas>
+        </div><!-- 右パネル --><div id="panel-r" class="sidePanel"><!-- レイヤー --><div>
+                <div id="layerName" style="float:left; font-weight: bold;">层级0</div>
+                <div class="menueButton layerButton" id="addLayer" onclick="addLayer()">+</div>
+                <div class="menueButton layerButton" id="deleteLayer" onclick="removeLayer()">－</div>
+                <div class="menueButton layerButton" id="prevLayer" onclick="prevLayer()">▲</div>
+                <div class="menueButton layerButton" id="nextLayer" onclick="nextLayer()">▼</div><br /><div id="soundName" style="float: left;">声音:null</div><br /><input type="file" accept=".wav,.ogg" id="soundFile" onchange="setSound(this.files)"
+                    style="width:300px; mix-blend-mode:var(--blendType);float:left;">
+            </div><!-- セレクター --><div style="display:flex; justify-content:space-around; padding: 3px;">
+                <div class="menueButton selector selected" id="selectorBrakr" onclick="setSelector(0)">制动</div>
+                <div class="menueButton selector" id="selectorOff" onclick="setSelector(1)">滑行</div>
+                <div class="menueButton selector" id="selectorPower" onclick="setSelector(2)">牵引</div>
+            </div><!-- 入力 --><div style="float: left;">速度x:<input type="text" id="addPanelSpd" style="width:30px;"><br /> 函数f.<input type="text" id="addPanelFunc" style="width:150px;"><br /><div style="display:flex; justify-content:space-around; padding: 3px;">
+                    <div style="padding: 5px 2px;">f(x)图形</div>
+                    <div class="menueButton nButton" onclick="addPitchPoint()">添加到音调</div>
+                    <div class="menueButton nButton" onclick="addVolumePoint()">添加到音量</div>
+                </div>-- 两点确定函数 --<br /> 速度1:<input type="text" id="calcFuncSpd1" style="width:30px;" value="0">值1:<input type="text" id="calcFuncVal1" style="width:30px;" value="0"><br /> 速度2:<input type="text" id="calcFuncSpd2" style="width:30px;" value="50">值2:<input type="text" id="calcFuncVal2" style="width:30px;" value="1.0">
+                <div class="menueButton loadButton" id="customFuncApply" onclick="calc2p()">代入</div>
+                <div style="float: left;">-- 音调与音量数据 --<div style="display:flex; justify-content:space-around;">
+                        <div class="menueButton" onclick="copyData()">复制</div>
+                        <div class="menueButton" onclick="pasteData()">粘贴</div>
+                    </div>
+                </div>
+            </div><!-- パネル --><div style="float:left; display:flex; justify-content:space-around;"><!-- Pitch --><div class="pointPanel">音调数据<br /><div id="pitchData">
+                        <div style="float: left;" class="point" onmouseover="highlightPoint(this,'pitchData')">
+                            <div id="point_S_${point.index}">Speed:${point.speed}</div>
+                            <div >Value:${point.value}</div>
+                            <div id="point_F_${point.index}">f(x):${point.func}</div>
+                            <div style="float: left;" id="point_E_${point.index}" onclick="editPoint(this)">[复制]</div>
+                            <div style="float: right;" id="point_D_${point.index}" onclick="deletePoint(this,'pitchData')">[删除]</div>
+                        </div>
+                    </div>
+                </div><!-- Volume --><div class="pointPanel">音量数据<br /><div id="volumeData"></div>
+                </div><!-- Audio --><div id="soundList">
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

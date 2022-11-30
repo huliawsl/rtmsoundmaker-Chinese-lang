@@ -1,0 +1,127 @@
+* {
+    margin: 0;
+    padding: 0;
+    user-select: none;
+
+    --baseColor : #111111;
+    --charColor : #b1afaf;
+    --blendColor : hsl(0, 0%, 11%);
+    --blendType : screen;
+
+    background-color: var(--baseColor);
+    color: var(--charColor);
+}
+
+#titleBar {
+    mix-blend-mode: var(--blendType);
+    font-size: 11px;
+    -webkit-app-region: drag;
+    width: 100%;
+    height: 23px;
+    text-align:center;
+    padding: 5px 0px 0px 0px;
+}
+
+.menueButton {
+    cursor: default;
+    font-size: 15px;
+    -webkit-app-region: no-drag;
+    float: left;
+    padding: 0px 15px;
+}
+
+.menueButton:hover {
+    mix-blend-mode: var(--blendType);
+    background: var(--blendColor);
+}
+
+.menueButton#Close:hover {
+    mix-blend-mode: normal;
+    background: hsl(0, 100%, 40%);
+    color: white;
+}
+
+#panels{
+    overflow: hidden;
+    height: calc(100vh - 34px);
+    display: flex;
+    border: solid 3px #00000000;
+}
+
+.sidePanel {
+    mix-blend-mode: var(--blendType);
+}
+
+#panel-l {
+    min-width: 160px;
+    height: 100%;
+}
+
+#panel-c {
+    width: calc(100vw - 465px);
+    height: calc(100vh - 70px);
+}
+
+#panel-r {
+    min-width: 300px;
+    max-width: 300px;
+    height: 100%;
+}
+
+.nButton {
+    float: left;
+    padding: 5px 2px;
+    margin: 1px;
+}
+
+.data {
+    padding: 0px 25px;
+    float: left;
+    font-size: 20px;
+}
+
+.layerButton {
+    float: right;
+    padding: 2px 5px;
+    margin: 1px;
+}
+
+.loadButton {
+    float: right;
+    mix-blend-mode: var(--blendType);
+    padding:1px 5px;
+}
+
+.pointPanel {
+    overflow-y: scroll;
+    overflow-x: hidden;
+    min-width: 140px;
+    max-width: 140px;
+    min-height: calc(100vh - 360px);
+    max-height: calc(100vh - 360px);
+    margin: 2px;
+    border: solid 3px var(--blendColor);
+}
+
+.point {
+    min-width: 115px;
+    max-width: 115px;
+    user-select: text;
+    cursor: text;
+    font-size: 12px;
+    margin: 1px;
+    border: solid 3px var(--blendColor);
+}
+
+.point:hover {
+    mix-blend-mode: var(--blendType);
+ }
+
+.selector {
+    float: left;
+    padding: 2px 30px;
+}
+
+.selected {
+    mix-blend-mode: var(--blendType);
+}

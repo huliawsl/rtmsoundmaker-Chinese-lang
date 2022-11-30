@@ -1,0 +1,172 @@
+<?xml version="1.0"?>
+<Project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Guid="6cd09c64-c85a-43bd-aac9-662cf1b4d9c8" SettingsBundleGuid="3771478f-0bf0-4f56-b0c2-47e1a2b6b480" Version="4.0.0.0" Owner="AOX-MI\ax" ProjectTemplateGuid="10004f3b-4acf-4425-a3e3-38d3b3514276" ReferenceProjectGuid="00000000-0000-0000-0000-000000000000">
+  <LanguageDirections>
+    <LanguageDirection Guid="71813fdf-ae63-49b5-b6aa-7f76907895a0" SettingsBundleGuid="92d7b86b-9223-49b8-8cb2-2582805ecfba" TargetLanguageCode="zh-CN" SourceLanguageCode="ja-JP">
+      <AutoSuggestDictionaries />
+      <CascadeItem OverrideParent="false" StopSearchingWhenResultsFound="false" />
+    </LanguageDirection>
+  </LanguageDirections>
+  <TermbaseConfiguration>
+    <RecognitionOptions>
+      <ShowWithNoAvailableTranslation>false</ShowWithNoAvailableTranslation>
+      <MinimumMatchValue>70</MinimumMatchValue>
+      <SearchDepth>200</SearchDepth>
+      <SearchOrder>Parallel</SearchOrder>
+    </RecognitionOptions>
+  </TermbaseConfiguration>
+  <SettingsBundles>
+    <SettingsBundle Guid="3771478f-0bf0-4f56-b0c2-47e1a2b6b480">
+      <SettingsBundle>
+        <SettingsGroup Id="TerminologyProviderSettings">
+          <Setting Id="TermbasesOrder">
+            <ArrayOfstring xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.microsoft.com/2003/10/Serialization/Arrays">
+            </ArrayOfstring>
+          </Setting>
+          <Setting Id="Termbases">
+            <ArrayOfTermbase xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.datacontract.org/2004/07/Sdl.ProjectApi.Implementation.Xml">
+            </ArrayOfTermbase>
+          </Setting>
+        </SettingsGroup>
+        <SettingsGroup Id="FileViewServiceSettings">
+          <Setting Id="SelectedTargetLanguageCode">zh-CN</Setting>
+        </SettingsGroup>
+        <SettingsGroup Id="Plugin.AnyTM.SourceLanguages">
+          <Setting Id="HasMixedSourceLanguages">False</Setting>
+          <Setting Id="AutoDetectSourceLanguage">True</Setting>
+          <Setting Id="SourceLanguages">ja-JP</Setting>
+        </SettingsGroup>
+      </SettingsBundle>
+    </SettingsBundle>
+  </SettingsBundles>
+  <AnalysisBands>
+    <AnalysisBand MinimumMatchValue="50" />
+    <AnalysisBand MinimumMatchValue="75" />
+    <AnalysisBand MinimumMatchValue="85" />
+    <AnalysisBand MinimumMatchValue="95" />
+  </AnalysisBands>
+  <ManualTaskTemplates />
+  <Users>
+    <User UserId="AOX-MI\ax" FullName="ax" Description="" Email="3150399699@qq.com" PhoneNumber="" EmailType="Smtp" />
+  </Users>
+  <CascadeItem OverrideParent="true" StopSearchingWhenResultsFound="false" />
+  <GeneralProjectInfo IsInPlace="true" IsImported="false" Name="index.html_ja-JP_zh-CN" CreatedAt="2022-11-30T00:53:41.0157583Z" StartedAt="2022-11-30T00:53:41.1547566Z" Status="Started" CreatedBy="AOX-MI\ax" />
+  <SourceLanguageCode>ja-JP</SourceLanguageCode>
+  <ProjectFiles>
+    <ProjectFile Guid="0808484c-e65b-4812-9c49-0ee91cad62e9" Path="" Role="Translatable" Name="index.html" ParentProjectFileGuid="00000000-0000-0000-0000-000000000000" FilterDefinitionId="Html 5 2.0.0.0">
+      <SpecificTargetLanguages />
+      <LanguageFiles>
+        <LanguageFile Guid="9563f774-ed93-4cc1-827b-6c524efb7538" SettingsBundleGuid="3a45f8a3-c4c9-4e46-9bf2-9f0cc62cd1c8" LanguageCode="ja-JP">
+          <FileVersions>
+            <FileVersion Guid="3286c954-69c0-4465-b0e0-56712f76918c" VersionNumber="1" Size="8387" FileName="index.html" PhysicalPath="index.html" CreatedBy="AOX-MI\ax" CreatedAt="2022-11-30T00:53:41.15376Z" FileTimeStamp="2022-11-30T00:50:10.1936864Z" IsAutoUpload="false" />
+          </FileVersions>
+          <AnalysisStatistics WordCountStatus="None" AnalysisStatus="None">
+            <Total Words="0" Characters="0" Segments="0" Placeables="0" Tags="0" />
+            <Repetitions Words="0" Characters="0" Segments="0" Placeables="0" Tags="0" />
+            <Perfect Words="0" Characters="0" Segments="0" Placeables="0" Tags="0" />
+            <InContextExact Words="0" Characters="0" Segments="0" Placeables="0" Tags="0" />
+            <Exact Words="0" Characters="0" Segments="0" Placeables="0" Tags="0" />
+            <Fuzzy>
+              <CountData Words="0" Characters="0" Segments="0" Placeables="0" Tags="0" />
+              <CountData Words="0" Characters="0" Segments="0" Placeables="0" Tags="0" />
+              <CountData Words="0" Characters="0" Segments="0" Placeables="0" Tags="0" />
+              <CountData Words="0" Characters="0" Segments="0" Placeables="0" Tags="0" />
+            </Fuzzy>
+            <New Words="0" Characters="0" Segments="0" Placeables="0" Tags="0" />
+            <NewBaseline Words="0" Characters="0" Segments="0" Placeables="0" Tags="0" />
+            <NewLearnings Words="0" Characters="0" Segments="0" Placeables="0" Tags="0" />
+            <Locked Words="0" Characters="0" Segments="0" Placeables="0" Tags="0" />
+          </AnalysisStatistics>
+          <ChildFiles />
+        </LanguageFile>
+        <LanguageFile Guid="e66de920-a76c-43b9-8c18-e16a3b50f678" SettingsBundleGuid="8a2396c7-2fa0-45f8-9e75-f5a4819d5300" LanguageCode="zh-CN">
+          <FileVersions>
+            <FileVersion Guid="fee35494-7d20-497f-b519-7110c12b6fe2" VersionNumber="2" Size="8387" FileName="index.html" PhysicalPath="index.html" CreatedBy="AOX-MI\ax" CreatedAt="2022-11-30T00:53:41.1627405Z" FileTimeStamp="2022-11-30T00:50:10.1936864Z" IsAutoUpload="false" />
+            <FileVersion Guid="ee507643-3b8a-44b8-bbb1-2aefac2107af" VersionNumber="3" Size="97433" FileName="index.html_ja-JP_zh-CN.sdlxliff" PhysicalPath="index.html_ja-JP_zh-CN.sdlxliff" Comment="" CreatedBy="AOX-MI\ax" CreatedAt="2022-11-30T02:39:16.3506013Z" FileTimeStamp="2022-11-30T02:39:16.2907982Z" IsAutoUpload="false" />
+            <FileVersion Guid="45570708-2b35-4d8a-a1d5-5deba8a4c2a3" VersionNumber="4" Size="97440" FileName="index.html_ja-JP_zh-CN.sdlxliff" PhysicalPath="index.html_ja-JP_zh-CN.sdlxliff" Comment="Created by '更新主翻译记忆库'" CreatedBy="AOX-MI\ax" CreatedAt="2022-11-30T02:39:24.5007964Z" FileTimeStamp="2022-11-30T02:39:24.4928221Z" IsAutoUpload="false" />
+            <FileVersion Guid="ad0b5669-6c33-4f8a-ae9e-e566c715fe16" VersionNumber="5" Size="7173" FileName="index.html_ja-JP_zh-CN.html" PhysicalPath="index.html_ja-JP_zh-CN.html" CreatedBy="AOX-MI\ax" CreatedAt="2022-11-30T02:39:24.7019569Z" FileTimeStamp="2022-11-30T02:39:24.6999599Z" IsAutoUpload="false" />
+          </FileVersions>
+          <AnalysisStatistics WordCountStatus="None" AnalysisStatus="None">
+            <Total Words="0" Characters="0" Segments="0" Placeables="0" Tags="0" />
+            <Repetitions Words="0" Characters="0" Segments="0" Placeables="0" Tags="0" />
+            <Perfect Words="0" Characters="0" Segments="0" Placeables="0" Tags="0" />
+            <InContextExact Words="0" Characters="0" Segments="0" Placeables="0" Tags="0" />
+            <Exact Words="0" Characters="0" Segments="0" Placeables="0" Tags="0" />
+            <Fuzzy>
+              <CountData Words="0" Characters="0" Segments="0" Placeables="0" Tags="0" />
+              <CountData Words="0" Characters="0" Segments="0" Placeables="0" Tags="0" />
+              <CountData Words="0" Characters="0" Segments="0" Placeables="0" Tags="0" />
+              <CountData Words="0" Characters="0" Segments="0" Placeables="0" Tags="0" />
+            </Fuzzy>
+            <New Words="0" Characters="0" Segments="0" Placeables="0" Tags="0" />
+            <NewBaseline Words="0" Characters="0" Segments="0" Placeables="0" Tags="0" />
+            <NewLearnings Words="0" Characters="0" Segments="0" Placeables="0" Tags="0" />
+            <Locked Words="0" Characters="0" Segments="0" Placeables="0" Tags="0" />
+          </AnalysisStatistics>
+          <ConfirmationStatistics FileTimeStamp="2022-11-30T00:50:10.1936864Z" Status="Complete">
+            <Unspecified Words="55" Characters="164" Segments="23" Placeables="6" Tags="1" />
+            <Draft Words="120" Characters="181" Segments="34" Placeables="6" Tags="1" />
+            <Translated Words="0" Characters="0" Segments="0" Placeables="0" Tags="0" />
+            <RejectedTranslation Words="0" Characters="0" Segments="0" Placeables="0" Tags="0" />
+            <ApprovedTranslation Words="0" Characters="0" Segments="0" Placeables="0" Tags="0" />
+            <RejectedSignOff Words="0" Characters="0" Segments="0" Placeables="0" Tags="0" />
+            <ApprovedSignOff Words="0" Characters="0" Segments="0" Placeables="0" Tags="0" />
+          </ConfirmationStatistics>
+          <ChildFiles />
+        </LanguageFile>
+      </LanguageFiles>
+      <PreviousBilingualFiles />
+    </ProjectFile>
+  </ProjectFiles>
+  <Tasks>
+    <AutomaticTask Guid="b38830fd-953c-43c0-a5e4-b999a2f22046" ComplexTaskTemplateId="Sdl.ProjectApi.AutomaticTask.Finalize" PercentComplete="100" Status="Completed" CreatedAt="2022-11-30T02:39:24.0817454Z" PredecessorTaskGuid="00000000-0000-0000-0000-000000000000" CreatedBy="AOX-MI\ax" CompletedAt="2022-11-30T02:39:24.5027902Z" StartedAt="2022-11-30T02:39:24.1200599Z">
+      <TaskTemplateIds>
+        <TaskTemplateId>Sdl.ProjectApi.AutomaticTasks.UpdateMasterTm</TaskTemplateId>
+      </TaskTemplateIds>
+      <Files>
+        <TaskFile Guid="24b5c6af-2c56-4148-b75a-a5c369d10dca" Completed="true" ParentTaskFileGuid="00000000-0000-0000-0000-000000000000" LanguageFileGuid="e66de920-a76c-43b9-8c18-e16a3b50f678" Purpose="WorkFile">
+          <Result Guid="00000000-0000-0000-0000-000000000000" />
+        </TaskFile>
+      </Files>
+      <OutputFiles>
+        <OutputFile LanguageFileGuid="e66de920-a76c-43b9-8c18-e16a3b50f678" Purpose="WorkFile" />
+      </OutputFiles>
+      <Reports />
+      <Parameters />
+      <Result Guid="00000000-0000-0000-0000-000000000000">
+        <Messages Level="Warning" Message="找不到语言对 Japanese (Japan)-&gt;Chinese (Simplified, China) 的待更新翻译记忆库。" Source="更新主翻译记忆库" />
+      </Result>
+    </AutomaticTask>
+    <AutomaticTask Guid="bd6ebff7-b359-4335-97d6-4a8bbd92c555" ComplexTaskTemplateId="Sdl.ProjectApi.AutomaticTask.Finalize" PercentComplete="100" Status="Completed" CreatedAt="2022-11-30T02:39:24.0817454Z" PredecessorTaskGuid="b38830fd-953c-43c0-a5e4-b999a2f22046" CreatedBy="AOX-MI\ax" CompletedAt="2022-11-30T02:39:24.7039477Z" StartedAt="2022-11-30T02:39:24.5087702Z">
+      <TaskTemplateIds>
+        <TaskTemplateId>Sdl.ProjectApi.AutomaticTasks.GenerateTargetTranslation</TaskTemplateId>
+      </TaskTemplateIds>
+      <Files>
+        <TaskFile Guid="2f0bba4c-c167-482f-a106-767dde26258c" Completed="true" ParentTaskFileGuid="00000000-0000-0000-0000-000000000000" LanguageFileGuid="e66de920-a76c-43b9-8c18-e16a3b50f678" Purpose="WorkFile">
+          <Result Guid="00000000-0000-0000-0000-000000000000" />
+        </TaskFile>
+      </Files>
+      <OutputFiles>
+        <OutputFile LanguageFileGuid="e66de920-a76c-43b9-8c18-e16a3b50f678" Purpose="WorkFile" />
+      </OutputFiles>
+      <Reports />
+      <Parameters />
+      <Result Guid="00000000-0000-0000-0000-000000000000" />
+    </AutomaticTask>
+    <AutomaticTask Guid="66c10641-02d3-4e80-bf85-9b93abdadbe5" PercentComplete="100" Status="Completed" CreatedAt="2022-11-30T02:39:47.0490652Z" PredecessorTaskGuid="00000000-0000-0000-0000-000000000000" CreatedBy="AOX-MI\ax" CompletedAt="2022-11-30T02:39:47.0826442Z" StartedAt="2022-11-30T02:39:47.0796543Z">
+      <TaskTemplateIds>
+        <TaskTemplateId>Sdl.ProjectApi.AutomaticTasks.GenerateTargetTranslation.ExportFiles</TaskTemplateId>
+      </TaskTemplateIds>
+      <Files>
+        <TaskFile Guid="9438a527-8bf8-4d79-800e-737f7db54530" Completed="true" ParentTaskFileGuid="00000000-0000-0000-0000-000000000000" LanguageFileGuid="e66de920-a76c-43b9-8c18-e16a3b50f678" Purpose="WorkFile">
+          <Result Guid="00000000-0000-0000-0000-000000000000" />
+        </TaskFile>
+      </Files>
+      <OutputFiles>
+        <OutputFile LanguageFileGuid="e66de920-a76c-43b9-8c18-e16a3b50f678" Purpose="WorkFile" />
+      </OutputFiles>
+      <Reports />
+      <Parameters />
+      <Result Guid="00000000-0000-0000-0000-000000000000" />
+    </AutomaticTask>
+  </Tasks>
+</Project>
