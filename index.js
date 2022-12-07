@@ -842,7 +842,7 @@ function addVolumePoint() {
 function editPoint(e) {
     let nodes = e.parentNode.children;
     let speed = nodes[0].innerText.replace("Speed:", "");
-    let func = nodes[2].innerText.replace("f(x):", "");
+    let func = nodes[2].innerText.replace("f:", "");
     document.getElementById("addPanelSpd").value = speed;
     document.getElementById("addPanelFunc").value = func;
     updatePointPanel();
